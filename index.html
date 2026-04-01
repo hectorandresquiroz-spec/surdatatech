@@ -1,0 +1,141 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;600;700&display=swap');
+  .apple-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
+  .apple-wrap { background: #000; font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; color: #f5f5f7; }
+  .nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 28px; background: rgba(0,0,0,0.85); border-bottom: 1px solid #222; }
+  .nav-logo { font-size: 13px; font-weight: 600; letter-spacing: 2px; color: #f5f5f7; }
+  .nav-links { display: flex; gap: 20px; }
+  .nav-links span { font-size: 11px; color: #999; cursor: pointer; letter-spacing: 0.3px; }
+  .hero { padding: 80px 28px 60px; text-align: center; border-bottom: 1px solid #1d1d1f; }
+  .eyebrow { font-size: 13px; font-weight: 600; color: #2997ff; letter-spacing: 0.5px; margin-bottom: 12px; }
+  .hero-title { font-size: clamp(36px, 8vw, 64px); font-weight: 700; line-height: 1.05; letter-spacing: -2px; color: #f5f5f7; margin-bottom: 16px; }
+  .hero-sub { font-size: clamp(16px, 3vw, 21px); font-weight: 300; color: #a1a1a6; line-height: 1.5; max-width: 540px; margin: 0 auto 36px; }
+  .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: #2997ff; color: #fff; border: none; border-radius: 980px; padding: 14px 28px; font-size: 15px; font-weight: 500; cursor: pointer; text-decoration: none; letter-spacing: -0.2px; display: inline-block; }
+  .btn-ghost { background: transparent; color: #2997ff; border: 1px solid #2997ff; border-radius: 980px; padding: 14px 28px; font-size: 15px; font-weight: 500; cursor: pointer; text-decoration: none; letter-spacing: -0.2px; display: inline-block; }
+  .screen-wrap { padding: 40px 28px; display: flex; justify-content: center; background: #000; border-bottom: 1px solid #1d1d1f; }
+  .laptop { background: #1d1d1f; border-radius: 14px; padding: 18px; max-width: 560px; width: 100%; }
+  .laptop-screen { background: #0a0a0a; border-radius: 8px; overflow: hidden; }
+  .screen-bar { background: #1c1c1e; display: flex; align-items: center; padding: 8px 12px; gap: 6px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; }
+  .screen-content { padding: 14px; display: flex; gap: 10px; }
+  .sidebar { background: #111; border-radius: 6px; padding: 10px 8px; width: 110px; flex-shrink: 0; }
+  .sb-logo { font-size: 10px; font-weight: 700; color: #2997ff; margin-bottom: 10px; letter-spacing: 0.5px; }
+  .sb-item { font-size: 9px; color: #666; padding: 5px 6px; border-radius: 4px; margin-bottom: 2px; cursor: pointer; }
+  .sb-item.active { background: #1d1d1f; color: #f5f5f7; }
+  .main-panel { flex: 1; background: #111; border-radius: 6px; padding: 10px 12px; }
+  .panel-title { font-size: 11px; font-weight: 600; color: #f5f5f7; margin-bottom: 8px; }
+  .row-item { background: #1c1c1e; border-radius: 5px; padding: 7px 10px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center; }
+  .row-name { font-size: 9px; color: #f5f5f7; font-weight: 500; }
+  .row-tag { font-size: 8px; background: #0a3d62; color: #2997ff; border-radius: 10px; padding: 2px 7px; }
+  .laptop-base { background: #2c2c2e; height: 12px; border-radius: 0 0 8px 8px; margin-top: 8px; }
+  .features { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: #1d1d1f; border-top: 1px solid #1d1d1f; border-bottom: 1px solid #1d1d1f; }
+  .feat { background: #000; padding: 36px 20px; text-align: center; }
+  .feat-icon { width: 36px; height: 36px; margin: 0 auto 14px; }
+  .feat-title { font-size: 15px; font-weight: 600; color: #f5f5f7; margin-bottom: 8px; letter-spacing: -0.3px; }
+  .feat-desc { font-size: 12px; color: #86868b; line-height: 1.6; }
+  .wapp-section { padding: 64px 28px; text-align: center; background: #000; }
+  .wapp-label { font-size: 13px; color: #86868b; margin-bottom: 12px; letter-spacing: 0.3px; }
+  .wapp-title { font-size: clamp(22px, 5vw, 38px); font-weight: 700; color: #f5f5f7; margin-bottom: 10px; letter-spacing: -1px; }
+  .wapp-sub { font-size: 15px; color: #86868b; margin-bottom: 32px; font-weight: 300; }
+  .wapp-btn { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #fff; border-radius: 980px; padding: 16px 36px; font-size: 16px; font-weight: 600; text-decoration: none; letter-spacing: -0.3px; }
+  .footer { padding: 24px 28px; border-top: 1px solid #1d1d1f; text-align: center; }
+  .footer p { font-size: 11px; color: #555; }
+</style>
+
+<div class="apple-wrap">
+  <nav class="nav">
+    <div class="nav-logo">SURDATA TECH</div>
+    <div class="nav-links">
+      <span>Productos</span>
+      <span>Soluciones</span>
+      <span>Contacto</span>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <p class="eyebrow">Nuevo · Gestión Digital Avanzada</p>
+    <h1 class="hero-title">Soluciones<br>innovadoras.</h1>
+    <p class="hero-sub">Simplifica y optimiza la gestión de instituciones, redes y equipos con tecnología de próxima generación.</p>
+    <div class="cta-row">
+      <a href="https://wa.me/56997311351" class="btn-primary">Conocer más</a>
+      <a href="https://wa.me/56997311351" class="btn-ghost">Ver demo</a>
+    </div>
+  </section>
+
+  <section class="screen-wrap">
+    <div class="laptop">
+      <div class="laptop-screen">
+        <div class="screen-bar">
+          <div class="dot" style="background:#ff5f57"></div>
+          <div class="dot" style="background:#febc2e"></div>
+          <div class="dot" style="background:#28c840"></div>
+          <span style="font-size:9px;color:#555;margin-left:8px">SurData Tech · Panel de Gestión</span>
+        </div>
+        <div class="screen-content">
+          <div class="sidebar">
+            <div class="sb-logo">SurData</div>
+            <div class="sb-item active">Equipos</div>
+            <div class="sb-item">Instituciones</div>
+            <div class="sb-item">Registros</div>
+            <div class="sb-item">Conexiones</div>
+            <div class="sb-item">Configuración</div>
+          </div>
+          <div class="main-panel">
+            <div class="panel-title">Módulo de gestión</div>
+            <div class="row-item"><span class="row-name">Equipo Norte</span><span class="row-tag">Activo</span></div>
+            <div class="row-item"><span class="row-name">Red Central</span><span class="row-tag">Activo</span></div>
+            <div class="row-item"><span class="row-name">Institución A</span><span class="row-tag">Activo</span></div>
+            <div class="row-item"><span class="row-name">Datos seguros</span><span class="row-tag">Protegido</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="laptop-base"></div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feat">
+      <svg class="feat-icon" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="16" stroke="#2997ff" stroke-width="1.5"/>
+        <path d="M12 18l4 4 8-8" stroke="#2997ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="feat-title">Gestión eficiente</div>
+      <div class="feat-desc">Automatiza y organiza tu equipo con módulos de gestión diseñados para instituciones modernas.</div>
+    </div>
+    <div class="feat">
+      <svg class="feat-icon" viewBox="0 0 36 36" fill="none">
+        <rect x="6" y="8" width="24" height="20" rx="3" stroke="#2997ff" stroke-width="1.5"/>
+        <path d="M12 14h12M12 19h8" stroke="#2997ff" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="feat-title">Interfaz intuitiva</div>
+      <div class="feat-desc">Plataforma simple, segura y fácil de usar. Diseñada para conectar equipos sociales al instante.</div>
+    </div>
+    <div class="feat">
+      <svg class="feat-icon" viewBox="0 0 36 36" fill="none">
+        <rect x="10" y="16" width="16" height="12" rx="2" stroke="#2997ff" stroke-width="1.5"/>
+        <path d="M13 16v-4a5 5 0 0 1 10 0v4" stroke="#2997ff" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="18" cy="22" r="2" fill="#2997ff"/>
+      </svg>
+      <div class="feat-title">Datos seguros</div>
+      <div class="feat-desc">Protección y privacidad avanzada para tus datos sensibles. Seguridad de nivel empresarial.</div>
+    </div>
+  </section>
+
+  <section class="wapp-section">
+    <p class="wapp-label">Contáctanos hoy</p>
+    <h2 class="wapp-title">¿Listo para empezar?</h2>
+    <p class="wapp-sub">Escríbenos por WhatsApp y recibe atención personalizada.</p>
+    <a href="https://wa.me/56997311351" class="wapp-btn">
+      <svg width="22" height="22" viewBox="0 0 32 32" fill="white">
+        <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.832 4.584 2.215 6.348L4.5 27.5l6.297-1.68A11.934 11.934 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.93 9.93 0 0 1-4.996-1.346l-.355-.213-3.736.996 1.023-3.629-.23-.372A9.93 9.93 0 0 1 6 15c0-5.523 4.477-10 10-10zm-3.14 4.5c-.23 0-.6.086-.916.43-.316.344-1.207 1.18-1.207 2.875 0 1.695 1.234 3.332 1.406 3.563.172.23 2.402 3.832 5.934 5.222 2.942 1.16 3.537.929 4.176.871.638-.058 2.06-.844 2.35-1.66.289-.815.289-1.514.203-1.66-.086-.143-.316-.23-.66-.4-.344-.17-2.035-1.004-2.35-1.118-.316-.115-.546-.172-.776.172-.23.344-.89 1.118-1.09 1.348-.2.23-.4.258-.745.086-.344-.172-1.453-.535-2.768-1.707-1.023-.91-1.714-2.035-1.915-2.379-.2-.344-.022-.53.15-.701.155-.155.344-.403.516-.603.172-.2.23-.344.344-.574.115-.23.058-.43-.029-.602-.086-.172-.762-1.875-1.063-2.562-.27-.624-.55-.547-.762-.559-.192-.01-.43-.01-.66-.01z"/>
+      </svg>
+      Escribir por WhatsApp
+    </a>
+  </section>
+
+  <footer class="footer">
+    <p>Copyright © 2025 SurData Tech. Todos los derechos reservados.</p>
+  </footer>
+</div>

@@ -1,51 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SurData Tech</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #000; font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; color: #f5f5f7; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 28px; background: rgba(0,0,0,0.85); border-bottom: 1px solid #222; }
+    .nav-logo { font-size: 13px; font-weight: 600; letter-spacing: 2px; color: #f5f5f7; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links span { font-size: 11px; color: #999; cursor: pointer; letter-spacing: 0.3px; }
+    .hero { padding: 80px 28px 60px; text-align: center; border-bottom: 1px solid #1d1d1f; }
+    .eyebrow { font-size: 13px; font-weight: 600; color: #2997ff; letter-spacing: 0.5px; margin-bottom: 12px; }
+    .hero-title { font-size: clamp(36px, 8vw, 64px); font-weight: 700; line-height: 1.05; letter-spacing: -2px; color: #f5f5f7; margin-bottom: 16px; }
+    .hero-sub { font-size: clamp(16px, 3vw, 21px); font-weight: 300; color: #a1a1a6; line-height: 1.5; max-width: 540px; margin: 0 auto; }
+    .screen-wrap { padding: 40px 28px; display: flex; justify-content: center; background: #000; border-bottom: 1px solid #1d1d1f; }
+    .laptop { background: #1d1d1f; border-radius: 14px; padding: 18px; max-width: 560px; width: 100%; }
+    .laptop-screen { background: #0a0a0a; border-radius: 8px; overflow: hidden; }
+    .screen-bar { background: #1c1c1e; display: flex; align-items: center; padding: 8px 12px; gap: 6px; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; }
+    .screen-content { padding: 14px; display: flex; gap: 10px; }
+    .sidebar { background: #111; border-radius: 6px; padding: 10px 8px; width: 110px; flex-shrink: 0; }
+    .sb-logo { font-size: 10px; font-weight: 700; color: #2997ff; margin-bottom: 10px; letter-spacing: 0.5px; }
+    .sb-item { font-size: 9px; color: #666; padding: 5px 6px; border-radius: 4px; margin-bottom: 2px; }
+    .sb-item.active { background: #1d1d1f; color: #f5f5f7; }
+    .main-panel { flex: 1; background: #111; border-radius: 6px; padding: 10px 12px; }
+    .panel-title { font-size: 11px; font-weight: 600; color: #f5f5f7; margin-bottom: 8px; }
+    .row-item { background: #1c1c1e; border-radius: 5px; padding: 7px 10px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center; }
+    .row-name { font-size: 9px; color: #f5f5f7; font-weight: 500; }
+    .row-tag { font-size: 8px; background: #0a3d62; color: #2997ff; border-radius: 10px; padding: 2px 7px; }
+    .laptop-base { background: #2c2c2e; height: 12px; border-radius: 0 0 8px 8px; margin-top: 8px; }
+    .features { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: #1d1d1f; border-top: 1px solid #1d1d1f; border-bottom: 1px solid #1d1d1f; }
+    .feat { background: #000; padding: 36px 20px; text-align: center; }
+    .feat-icon { width: 36px; height: 36px; margin: 0 auto 14px; }
+    .feat-title { font-size: 15px; font-weight: 600; color: #f5f5f7; margin-bottom: 8px; letter-spacing: -0.3px; }
+    .feat-desc { font-size: 12px; color: #86868b; line-height: 1.6; }
+    .wapp-section { padding: 64px 28px; text-align: center; background: #000; }
+    .wapp-label { font-size: 13px; color: #86868b; margin-bottom: 12px; letter-spacing: 0.3px; }
+    .wapp-title { font-size: clamp(22px, 5vw, 38px); font-weight: 700; color: #f5f5f7; margin-bottom: 10px; letter-spacing: -1px; }
+    .wapp-sub { font-size: 15px; color: #86868b; margin-bottom: 32px; font-weight: 300; }
+    .wapp-btn { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #fff; border-radius: 980px; padding: 16px 36px; font-size: 16px; font-weight: 600; text-decoration: none; letter-spacing: -0.3px; }
+    .wapp-btn:hover { background: #1ebe5d; }
+    footer { padding: 24px 28px; border-top: 1px solid #1d1d1f; text-align: center; }
+    footer p { font-size: 11px; color: #555; }
+    @media (max-width: 480px) {
+      .features { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;600;700&display=swap');
-  .apple-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
-  .apple-wrap { background: #000; font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; color: #f5f5f7; }
-  .nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 28px; background: rgba(0,0,0,0.85); border-bottom: 1px solid #222; }
-  .nav-logo { font-size: 13px; font-weight: 600; letter-spacing: 2px; color: #f5f5f7; }
-  .nav-links { display: flex; gap: 20px; }
-  .nav-links span { font-size: 11px; color: #999; cursor: pointer; letter-spacing: 0.3px; }
-  .hero { padding: 80px 28px 60px; text-align: center; border-bottom: 1px solid #1d1d1f; }
-  .eyebrow { font-size: 13px; font-weight: 600; color: #2997ff; letter-spacing: 0.5px; margin-bottom: 12px; }
-  .hero-title { font-size: clamp(36px, 8vw, 64px); font-weight: 700; line-height: 1.05; letter-spacing: -2px; color: #f5f5f7; margin-bottom: 16px; }
-  .hero-sub { font-size: clamp(16px, 3vw, 21px); font-weight: 300; color: #a1a1a6; line-height: 1.5; max-width: 540px; margin: 0 auto 36px; }
-  .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-  .btn-primary { background: #2997ff; color: #fff; border: none; border-radius: 980px; padding: 14px 28px; font-size: 15px; font-weight: 500; cursor: pointer; text-decoration: none; letter-spacing: -0.2px; display: inline-block; }
-  .btn-ghost { background: transparent; color: #2997ff; border: 1px solid #2997ff; border-radius: 980px; padding: 14px 28px; font-size: 15px; font-weight: 500; cursor: pointer; text-decoration: none; letter-spacing: -0.2px; display: inline-block; }
-  .screen-wrap { padding: 40px 28px; display: flex; justify-content: center; background: #000; border-bottom: 1px solid #1d1d1f; }
-  .laptop { background: #1d1d1f; border-radius: 14px; padding: 18px; max-width: 560px; width: 100%; }
-  .laptop-screen { background: #0a0a0a; border-radius: 8px; overflow: hidden; }
-  .screen-bar { background: #1c1c1e; display: flex; align-items: center; padding: 8px 12px; gap: 6px; }
-  .dot { width: 9px; height: 9px; border-radius: 50%; }
-  .screen-content { padding: 14px; display: flex; gap: 10px; }
-  .sidebar { background: #111; border-radius: 6px; padding: 10px 8px; width: 110px; flex-shrink: 0; }
-  .sb-logo { font-size: 10px; font-weight: 700; color: #2997ff; margin-bottom: 10px; letter-spacing: 0.5px; }
-  .sb-item { font-size: 9px; color: #666; padding: 5px 6px; border-radius: 4px; margin-bottom: 2px; cursor: pointer; }
-  .sb-item.active { background: #1d1d1f; color: #f5f5f7; }
-  .main-panel { flex: 1; background: #111; border-radius: 6px; padding: 10px 12px; }
-  .panel-title { font-size: 11px; font-weight: 600; color: #f5f5f7; margin-bottom: 8px; }
-  .row-item { background: #1c1c1e; border-radius: 5px; padding: 7px 10px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center; }
-  .row-name { font-size: 9px; color: #f5f5f7; font-weight: 500; }
-  .row-tag { font-size: 8px; background: #0a3d62; color: #2997ff; border-radius: 10px; padding: 2px 7px; }
-  .laptop-base { background: #2c2c2e; height: 12px; border-radius: 0 0 8px 8px; margin-top: 8px; }
-  .features { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: #1d1d1f; border-top: 1px solid #1d1d1f; border-bottom: 1px solid #1d1d1f; }
-  .feat { background: #000; padding: 36px 20px; text-align: center; }
-  .feat-icon { width: 36px; height: 36px; margin: 0 auto 14px; }
-  .feat-title { font-size: 15px; font-weight: 600; color: #f5f5f7; margin-bottom: 8px; letter-spacing: -0.3px; }
-  .feat-desc { font-size: 12px; color: #86868b; line-height: 1.6; }
-  .wapp-section { padding: 64px 28px; text-align: center; background: #000; }
-  .wapp-label { font-size: 13px; color: #86868b; margin-bottom: 12px; letter-spacing: 0.3px; }
-  .wapp-title { font-size: clamp(22px, 5vw, 38px); font-weight: 700; color: #f5f5f7; margin-bottom: 10px; letter-spacing: -1px; }
-  .wapp-sub { font-size: 15px; color: #86868b; margin-bottom: 32px; font-weight: 300; }
-  .wapp-btn { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #fff; border-radius: 980px; padding: 16px 36px; font-size: 16px; font-weight: 600; text-decoration: none; letter-spacing: -0.3px; }
-  .footer { padding: 24px 28px; border-top: 1px solid #1d1d1f; text-align: center; }
-  .footer p { font-size: 11px; color: #555; }
-</style>
-
-<div class="apple-wrap">
-  <nav class="nav">
+  <nav>
     <div class="nav-logo">SURDATA TECH</div>
     <div class="nav-links">
       <span>Productos</span>
@@ -58,10 +65,6 @@
     <p class="eyebrow">Nuevo · Gestión Digital Avanzada</p>
     <h1 class="hero-title">Soluciones<br>innovadoras.</h1>
     <p class="hero-sub">Simplifica y optimiza la gestión de instituciones, redes y equipos con tecnología de próxima generación.</p>
-    <div class="cta-row">
-      <a href="https://wa.me/56997311351" class="btn-primary">Conocer más</a>
-      <a href="https://wa.me/56997311351" class="btn-ghost">Ver demo</a>
-    </div>
   </section>
 
   <section class="screen-wrap">
@@ -135,7 +138,9 @@
     </a>
   </section>
 
-  <footer class="footer">
+  <footer>
     <p>Copyright © 2025 SurData Tech. Todos los derechos reservados.</p>
   </footer>
-</div>
+
+</body>
+</html>
